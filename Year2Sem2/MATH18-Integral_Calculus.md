@@ -1,7 +1,8 @@
 Crap… 🫠
 **_I WILL_** pass ts
-# Integration?
-So if differentiation deals with _the rate_ of function per interval, integration is in the inverse (or the opposite) where we find how much is _the total_ change of the function `indefinite ? per : in` the interval.
+
+# 1. Integration?
+So if differentiation deals with _the rate of change_ of function per interval, integration is in the inverse (or the opposite) where we find how much is _the total_ area of the function `indefinite ? per : in` the interval.
 
 Stealing from _Math is Fun_, if derivative is how much the water is filled **per interval** (say min), integral is how much is the **total**.
 
@@ -13,40 +14,128 @@ Still don't get it? See the green shaded area in the image below, that's what we
 ![[Screenshot_20251130_185621_YouTube.jpg]]
 
 Since integration is the undoing of integration, there's no core formula unlike differentiation so we have to use multiple techniques which we'll talk later.
-# Differentiation Recap
+# 2. Differentiation Recap
 
 ~~\severance{Previously, in Differential Calculus}~~
-In integration, derivatives are still relevant because some techniques e.g., [u-sub](# Integration by Substitution) and [by parts](#Integration By Parts) 
-## First Principle
+Derivatives are still relevant because some techniques e.g., [[# 4. Integration by Substitution | u-sub]] and [by parts](#Integration By Parts) require it so:
+## 2.0. First Principle
 Aka by the definition:
 $$\lim_{h\to{0}} = \frac{f(x+h) - f(x)}{h}$$
 
-## Constant rule
-Constants are just 0 because well, $1-1 = 0$.
-# Constant Multiple Rule
-$$\frac{d}{dx} = [cf(x)] = c \frac{d}{dx}f(x)$$ Or $c * f(x)$
+## 2.1. Constant rule
+Constants are just 0 because well, thing minus itself is 0.
+## 2.2. Constant Multiple Rule
+$$\frac{d}{dx} = [cf(x)] = c \frac{d}{dx}f(x)$$ Or $c * f'(x)$
+## 2.3. Sum Rule
+$$\frac{d}{dx}[f(x)+g(x)]= f'(x)+g'(x)$$
+## 2.4. Difference Rule
+Same as sum but with subtraction ($-$)
+## 2.5. Product Rule
+$$\begin{align}
+\frac{d}{dx}[f(x)g(x)]= \\\\
 
-
-## Power rule
-If ($f(x) = x^n${
+f(x)g'(x)+g(x)f'(x)
+\end{align}$$
+TLDR:
+$$vu'+uv'$$
+## 2.6. Power rule
+$\diff f(x) = x^n$
 $nx^{n-1}$
-}
+
 Constant multiple rule still apply btw so if ($f(x) = c(x)^n$){
 $f'(x)= (c)(n)x^{n-1}$ 
 }
-## Quotient Rule
+## 2.7. Quotient Rule
 $$\frac{d}{dx}[\frac{f(x)}{g(x)}] = \frac{[f'(x)g(x)]-[g'(x)f(x)]}{[g(x)]^2}$$
 In a nutshell:
 $$\frac{(u'v) -(v'u)}{v^2}$$
+## 2.8 Chain Rule
+$$\frac{d}{dx}f(g(x)) = f'(g(x))g'(x)$$
+TLDR:
+$$ (v'(u)) \* u'$$
 
-# Antiderivatives
+## 2.8. On Transcendental Functions
+### 2.8.1. Exponential and Logarithmic Functions
+- $\diff e^x = e^x$
+- $\diff \ln{x} = \frac{1}{x}$
+- $\diff \ln[f(x)] = \frac{1}{f(x)}f'(x)$
+- $\diff \log_a(x) = \frac{1}{x \ln a}$
+- $\diff \log_a(x) = \frac{1}{f(x) \ln a}f'(x)$
+### 2.8.2 Trigonometric Functions
+- $\diff \sin(x)=\cos(x)$
+- $\diff \cos{(x)} = -\sin{(x)}$ 
+- $\diff \tan(x) = \sec^2(x)$
+### 2.8.3 Inverse Trig Functions
+- $\diff \arcsin(x) = \frac{1}{\sqrt{1-x^2}}$
+- $\diff \arctan(x)=\frac{1}{1+x^2}$
+- $\diff arcsec(x) = \frac{1}{x\sqrt{x^2-1}}$
+
+# 3. Antiderivatives
+
+> [!definition]
+> A function $F$ is called an antiderivative of a function on an interval $I$ of $F'(x)=f(x)$ for every value of $x$ in $I$
+
+
+Basically, an antiderivative is the result of integration. When it's differentiated, it should go back to the function you just integrated
+
+## 3.1. Integration/Antidiferentiation
+A process of finding the set of all antiderivatives in a given function
+$\int f(x)dx$ can be read as "integral of $f(x)dx$"
+## 3.2 Formulas
+1. **Power Rule**
+$$\int x^ndx = \frac{x^{n+1}}{n+1}+C \text{ where n != -1}$$
+2. $\int dx = 1+C$
+3. For every a E /R, $\int a f(x)=$ $a\int{f(x)}$
+4. $\int [f(x)±g(x)]dx =$ $f(x)dx±g(x)dx$
+# 4. Integration by Substitution 
+
+> [!Formula(?)]
+> $$f(g(x)) = f(g(x))g'(x)$$
+> Or just
+> $$v(u) = v(u) \* u'$$
+
+Aka **U substitution**, let shorten it to **_u-sub_**.
+1. Find $u$
+2. Diff(u); if $g'(x)$ != $f(x)$, stop
+3. Simplify $du$ (basic fraction btw, dw). 
+4. $\frac{du}{n}$ where n is what factor you used for simplification
+5. dx is now du
+6. Isolate the fraction to integral
+7. _Finally,_ integrate
+8. Simplify again
+9. Insert back the u
+
+E.g.:
+$\int (3x-2)\sqrt[3]{(3x^2-4x)}dx$ 
+$$
+\begin{align}
+(3x-2)(3x^2-4x+x)^{\frac{3}{2}}\\
+^{\text{//btw, sqrt = $n^{\frac{1}{[root]}}$
+and $\frac{1}{2} \* \frac{3}{1} = \frac{3}{2}$}}\\
+\text{1.) Let }u=3x^2-4x+7 \\
+\text{2.) }du = 6x-4dx \\
+\text{3.) }du = \frac{6x-4}{2} = 3x-2 \text{ ✅}\\
+\text{4 }\frac{du}{2}=3x-2 \\
+\text{5.) }(3x-2)(\frac{du}{2})^{\frac{2}{3}} \\
+\text{6.) }\frac{1}{2}\int u^{\frac{2}{3}}du \\
+\text{7.) }\frac{1}{2}\int \frac{u^{\frac{2}{3}+1}}{{\frac{2}{3}-1}} \\
+= \frac{1}{2} \int \frac{u^{\frac{5}{3}}}{\frac{5}{3}}\\
+\text{8.) }\frac{3}{5}\* \frac{1}{2} u^{\frac{5}{3}}+C \\
+\text{//fraction division btw} \\
+\frac{3}{10}u^\frac{5}{3}+C \\
+\text{9. }\frac{3}{10}(3x^2-4x+7)^{\frac{5}{3}}+C👍
+\end{align}
+$$
+
+
 
 # Fundamental theorem
 
 
 > [!theorem]
-> 
 If a function $f$ is continuous on the interval \[a, b], then $$\int^b_{a}f(x)dx=F(b)-F(a)$$ where $F$ is the antiderivative of $f$
+
+
 ## Definite properties of integral
 $$
 \int_{b}^{a}f(x)dx=-\int_{a}^{b}f(x)dx
@@ -58,8 +147,6 @@ $$\begin{align}
 \int_a^bf(x)dx = \\ \\
 \int_a^cf(x)dx +\int_c^bf(x)dx
 \end{align}$$
-# Integration by Substitution 
-Aka **U substitution**, let shorten it to **_u-sub_**
 
 #  Integration by parts
 Remember: $$\begin{align}
