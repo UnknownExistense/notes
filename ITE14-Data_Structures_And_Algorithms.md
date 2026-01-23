@@ -1,0 +1,64 @@
+
+# Recap
+## 2D array
+
+### Pass by Reference
+## S T R I N G S !
+## Dynamic Memory Allocation
+In languages like C, you need your memory to expand, you're going to need dynamic allocation. (standard)C in particular, uses malloc and calloc.
+
+
+### Malloc
+Note: pointer asterisk can be after data type or variable name. I prefer the former
+
+
+(data type)* a = ([data type] \*) malloc(size, preferably "items \* sizeof(type)) )
+
+E.g.,
+```
+int n = 10;
+int* a = (int *)malloc(n * sizeof(int))
+```
+Q: Why sizeof and n?
+A1: While you can use just the size as-is, it's not practical because you might stumble in 32-bit, heck even 16-bit systems. And different architecture and bus size == different size of these variables.
+A2: We used n so we don't lose track of how large it is because C doesn't have a way to size dynamic array— pointers have the same size and they since well, they just point to address.
+### Calloc
+Malloc don't initialize so what happens is that you fetch gibberish from memory. Calloc initialize to 0.
+#### Syntax
+```
+(type)* a = (type *)calloc(count , size)
+```
+
+E.g.,
+
+```
+int* a= (int *)calloc(n, sizeof(int))
+```
+
+
+
+### Realloc
+Say, you want a resize (shrink or expand)
+#### Syntax:
+```
+int* [New pointer] = (int *)realloc([pointer you wanna change], [new size])
+```
+E.g., 
+```
+int* b = (int *) realloc(a, (n+10) * sizeof(int) )
+```
+Why a new pointer? Just for convenience really because what if NULLs
+
+---
+
+Note: It's a good idea when dynamically allocating to check if it's successful (i.e., not NULL) so we don't write to a NULL pointer and boom.
+
+### Free
+Free deallocates the memory for later use. If you forget to, it will stay in memory til you restart so don't.
+#### Syntax
+```
+free(a)
+a = NULL
+
+```
+It's nice to Null your dyalloced pointer so it doesn't point to something
