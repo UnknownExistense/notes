@@ -39,3 +39,25 @@
 | Const (MAX_COUNT)                 | UPPER_SNAKE_ CASE |
 | Package (com.company)             | lowercase         |
 | Generic type \<T>                 | Single uppercase  |
+# Class & Objects 
+
+| Obj               | Cls                           |
+| ----------------- | ----------------------------- |
+| Instance of class | Definition of connected thing |
+
+
+| Obj state | Obj behavior              |
+| --------- | ------------------------- |
+| Value     | Action def'd thru methods |
+
+| Constructor                                   | Destructor                    |
+| --------------------------------------------- | ----------------------------- |
+| Member fn of class w/ same name as class name | Methods when obj is destroyed |
+
+Destructor doesn't _exactly_ apply to java because it has garbage collection
+
+## Instantation
+Process of creating a real obj from a class template
+- think of it as building from blueprint (class)
+E.g,
+`Dog `

@@ -13,7 +13,7 @@ Still don't get it? See the green shaded area in the image below, that's what we
 
 ![[Screenshot_20251130_185621_YouTube.jpg]]
 
-Since integration is the undoing of integration, there's no core formula unlike differentiation so we have to use multiple techniques which we'll talk later.
+Since integration is the undoing of, there's no core formula unlike differentiation so we have to use multiple techniques which we'll talk later.
 # 2. Differentiation Recap
 
 ~~\severance{Previously, in Differential Calculus}~~
@@ -87,19 +87,20 @@ $$\int x^ndx = \frac{x^{n+1}}{n+1}+C \text{ where n != -1}$$
 2. $\int dx = 1+C$
 3. For every a E /R, $\int a f(x)=$ $a\int{f(x)}$
 4. $\int [f(x)±g(x)]dx =$ $f(x)dx±g(x)dx$
+
 # 4. Integration by Substitution 
 
 > [!Formula(?)]
-> $$f(g(x)) = f(g(x))g'(x)$$
+> $$\int f(g(x)) = \int f(g(x))g'(x)$$
 > Or just
-> $$v(u) = v(u) \* u'$$
+> $$\int v(u) = \int v(u) \* u'$$
 
 Aka **U substitution**, let shorten it to **_u-sub_**.
 1. Find $u$
-2. Diff(u); if $g'(x)$ != $f(x)$, stop
-3. Simplify $du$ (basic fraction btw, dw). 
+2. Diff(u);
+3. Simplify $du$ (basic fraction btw, dw). if simplified $u'$ != $v$, stop; u-sub is a terrible idea
 4. $\frac{du}{n}$ where n is what factor you used for simplification
-5. dx is now du
+5. dx is now du; can be ignored i think, v = u
 6. Isolate the fraction to integral
 7. _Finally,_ integrate
 8. Simplify again
@@ -127,7 +128,45 @@ and $\frac{1}{2} \* \frac{3}{1} = \frac{3}{2}$}}\\
 \end{align}
 $$
 
+## Trig Functions
+1. $\int \sin{u}du = -\cos{u}+C$
+2. $\int \cos u du = \sin u +C$
+3. $\int \sec^2{u}du = \tan{u}+C$
+4. $\int \csc^2{u}du = -\cot{u} +C$
+5. $\int \sec u \tan u du= \sec u + C$
+6. $\int \csc u \cot u du = -\csc u + C$
+## Exponential and Logarithmic Functions and Integration Yielding the Natural Logarithmic Function
+1. $\int{e^udu} = e^u+C$
+2. $\int{a^udu}=\frac{a^u}{\ln{a}}+C$ where $a$ is a real number
+3. $\int u^{-1} = \int \frac{du}{u} = \ln |u| +C$ 
+4. $\int \sec u du = \ln|\sec u + \tan u| +C$
+5. $\int \csc u du =$ $$\begin{align}
+\ln |\csc u - \cot u| +C \\
+-\ln | \csc u + \cot u | +C
+\end{align} $$
+6. $\int{\tan{u}}du = \ln |sec u | +C$
+7. $\int \cot u du = \ln |\sin u| +C$
 
+## Inverse Trig Functions
+1. $\int \diff \arcsin u = \int \frac{du}{\sqrt{1-u²}}$ 
+
+#  Integration by parts
+> [!Formula(?)]
+> $\int u dv= uv - \int vdu$
+
+E.g.,
+1. $x e^xdx$
+$$\begin{align}
+u = x; du =dx
+v = 
+
+\end{align}$$
+
+Tip: remember LIATE{
+Logarithmic
+Inverse Trigonometric, 
+Algebraic
+Trigonometric, Exponential}order
 
 # Fundamental theorem
 
@@ -148,27 +187,7 @@ $$\begin{align}
 \int_a^cf(x)dx +\int_c^bf(x)dx
 \end{align}$$
 
-#  Integration by parts
-Remember: $$\begin{align}
-\frac{d}{dx}[f(x)g(x)]= \\ f(x)g(x)+g(x)f(x)
-\end{align}$$
-Integrating both sides with respect to x, we get: $$ \begin{align}
-f(x)g(x)= \\ \int[f(x)g'(x)+g(x)f'(x)]dx
-\end{align}$$
-Let $u=f(x)$ and $v=g(x)$. Then:
-$$uv=\int(udv+vdu)$$
-$$
-uv=\int udv + vdu
-$$
-$$
-\int udv = uv - \int vdu
-$$
-Tip: remember LIATE(Logarithmic, Inverse Trigonometric, Exponential, Trigonometric, Exponential) order
-
-sizeof(function) == 1 ? $dv = dx$
-
-If there's literally no other function (e.g., $\ln|x|dx$), dx will be the $v$
-## Trigonometric Integrals
+# Trigonometric Integrals
 Commons
 $$
 \text{Evaluating } \int tan^mxsec^nxdx

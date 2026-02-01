@@ -38,3 +38,13 @@ What if users' data's gonna leak?
 ### Best methods?
 _**NOTHING!**_ It depends on what you need
 ### LOL, the Internet
+
+
+---
+- item tracking (it's manual, tedious af)
+
+- - -
+- paraphrase ps#3
+**Stakeholders**
+- Users (students)
+---

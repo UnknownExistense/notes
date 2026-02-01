@@ -47,7 +47,7 @@ E.g.,
 ```
 int* b = (int *) realloc(a, (n+10) * sizeof(int) )
 ```
-Why a new pointer? Just for convenience really because what if NULLs
+Why a new pointer? Just for convenience really because what if it NULLs
 
 ---
 
@@ -62,3 +62,35 @@ a = NULL
 
 ```
 It's nice to Null your dyalloced pointer so it doesn't point to something
+
+# Abstract Data Type
+A user-defined data type. It's composed of two parts:
+1. Data declaration 
+2. Operation declaration
+E.g.,: Linked list, queue, tree
+## Self-referential Structures
+Contains a pointer that points to a struct of same struct type
+
+E.g.,:
+```
+typedef struct{
+char name[20];
+int x;
+student* n;
+};
+```
+
+# Linked List
+```
+typedef struct{
+int x;
+node* next;
+}node;
+```
+![[Linked_list]]
+## Creating node
+```
+current = head;
+n -> x = 25;
+n -> next = NULL;
+```
