@@ -1,3 +1,5 @@
+$$\def\union{\cup}
+\def\intersect{\cap}$$
 # How to manage info & Data Privacy laws
 ## Info mgmt?
 - Systematic process of collecting, organizing, storing & distributing data & knowledge w/in an org
@@ -81,4 +83,4 @@ Theo foundation of db that helps understand how dbs process queries.
 | Join       | $\bowtie$    |                                  |
 | Union      | $\cup$       |                                  |
 | Intersect  | $\intersect$ |                                  |
-| Difference |              |                                  |
+| Difference | $-$          |                                  |

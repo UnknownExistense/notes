@@ -1,4 +1,3 @@
-
 # Recap
 ## 2D array
 
@@ -21,7 +20,7 @@ int* a = (int *)malloc(n * sizeof(int))
 ```
 Q: Why sizeof and n?
 A1: While you can use just the size as-is, it's not practical because you might stumble in 32-bit, heck even 16-bit systems. And different architecture and bus size == different size of these variables.
-A2: We used n so we don't lose track of how large it is because C doesn't have a way to size dynamic array— pointers have the same size and they since well, they just point to address.
+A2: We used n so we don't lose track of how large it is because C doesn't have a way to size dynamic array— pointers have always the same size since well, they just point to address.
 ### Calloc
 Malloc don't initialize so what happens is that you fetch gibberish from memory. Calloc initialize to 0.
 #### Syntax
@@ -94,3 +93,41 @@ current = head;
 n -> x = 25;
 n -> next = NULL;
 ```
+## E.g.,
+![[ITE14-Data_Structures_And_Algorithms 2026-02-03 09.18.12.excalidraw]]
+
+```c
+typedef struct list{
+int x;
+struct list* next;
+}list;
+
+list* add(){
+list n = malloc(sizeof(list));
+puts("int. iykyk");
+_sf("%d", &n->x);
+n->next=NULL;
+
+return n;
+}
+
+
+
+main(){
+list* n1 = malloc(sizeof(list));
+n1->x=5; n1->next=NULL;
+list* n4 = add();
+n3->next = n4;
+
+list *head, *current;
+head = n1;
+current = head;
+
+_w(curren != NULL){
+	_pf("%d", current->x);
+	current=current->next;	
+	}
+_r 0;
+}
+```
+

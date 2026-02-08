@@ -60,4 +60,19 @@ Destructor doesn't _exactly_ apply to java because it has garbage collection
 Process of creating a real obj from a class template
 - think of it as building from blueprint (class)
 E.g,
-`Dog `
+
+```java
+public class []{
+[] s1, s2, s3;
+
+[Constructor, same name as class](d.a, d.b, d.c){
+s1 = a; s2 = b; s3 = c;
+
+
+	public double perimeter(){
+		
+	}
+}
+
+}
+```

@@ -1,6 +1,7 @@
 Crap… 🫠
 **_I WILL_** pass ts
-
+$\def\diff{\frac{d}{dx}}$
+$\def\*{\cdot}$
 # 1. Integration?
 So if differentiation deals with _the rate of change_ of function per interval, integration is in the inverse (or the opposite) where we find how much is _the total_ area of the function `indefinite ? per : in` the interval.
 
@@ -25,7 +26,7 @@ $$\lim_{h\to{0}} = \frac{f(x+h) - f(x)}{h}$$
 ## 2.1. Constant rule
 Constants are just 0 because well, thing minus itself is 0.
 ## 2.2. Constant Multiple Rule
-$$\frac{d}{dx} = [cf(x)] = c \frac{d}{dx}f(x)$$ Or $c * f'(x)$
+$$\frac{d}{dx} = [cf(x)] = c \frac{d}{dx}f(x)$$ Or $c \* f'(x)$
 ## 2.3. Sum Rule
 $$\frac{d}{dx}[f(x)+g(x)]= f'(x)+g'(x)$$
 ## 2.4. Difference Rule
@@ -57,14 +58,14 @@ $$ (v'(u)) \* u'$$
 ## 2.8. On Transcendental Functions
 ### 2.8.1. Exponential and Logarithmic Functions
 - $\diff e^x = e^x$
-- $\diff \ln{x} = \frac{1}{x}$
-- $\diff \ln[f(x)] = \frac{1}{f(x)}f'(x)$
-- $\diff \log_a(x) = \frac{1}{x \ln a}$
+- $\diff\ln{x} = \frac{1}{x}$
+- $\diff\ln[f(x)] = \frac{1}{f(x)}f'(x)$
+- $\diff\log_a(x) = \frac{1}{x \ln a}$
 - $\diff \log_a(x) = \frac{1}{f(x) \ln a}f'(x)$
 ### 2.8.2 Trigonometric Functions
-- $\diff \sin(x)=\cos(x)$
-- $\diff \cos{(x)} = -\sin{(x)}$ 
-- $\diff \tan(x) = \sec^2(x)$
+- $\diff\sin(x)=\cos(x)$
+- $\diff\cos{(x)} = -\sin{(x)}$ 
+- $\diff\tan(x) = \sec^2(x)$
 ### 2.8.3 Inverse Trig Functions
 - $\diff \arcsin(x) = \frac{1}{\sqrt{1-x^2}}$
 - $\diff \arctan(x)=\frac{1}{1+x^2}$
@@ -85,7 +86,7 @@ $\int f(x)dx$ can be read as "integral of $f(x)dx$"
 1. **Power Rule**
 $$\int x^ndx = \frac{x^{n+1}}{n+1}+C \text{ where n != -1}$$
 2. $\int dx = 1+C$
-3. For every a E /R, $\int a f(x)=$ $a\int{f(x)}$
+3. For $a \in \mathbb{R}$, $\int a f(x)=$ $a\int{f(x)}$
 4. $\int [f(x)±g(x)]dx =$ $f(x)dx±g(x)dx$
 
 # 4. Integration by Substitution 
@@ -98,7 +99,7 @@ $$\int x^ndx = \frac{x^{n+1}}{n+1}+C \text{ where n != -1}$$
 Aka **U substitution**, let shorten it to **_u-sub_**.
 1. Find $u$
 2. Diff(u);
-3. Simplify $du$ (basic fraction btw, dw). if simplified $u'$ != $v$, stop; u-sub is a terrible idea
+3. Simplify $du$ (basic fraction btw, dw). if simplified $u'$ != $v$, stop and consider by parts
 4. $\frac{du}{n}$ where n is what factor you used for simplification
 5. dx is now du; can be ignored i think, v = u
 6. Isolate the fraction to integral
@@ -140,10 +141,7 @@ $$
 2. $\int{a^udu}=\frac{a^u}{\ln{a}}+C$ where $a$ is a real number
 3. $\int u^{-1} = \int \frac{du}{u} = \ln |u| +C$ 
 4. $\int \sec u du = \ln|\sec u + \tan u| +C$
-5. $\int \csc u du =$ $$\begin{align}
-\ln |\csc u - \cot u| +C \\
--\ln | \csc u + \cot u | +C
-\end{align} $$
+5. $\int \csc u du =$ $\begin{equation} \begin{cases} & \ln |\csc u - \cot u| +C \\ & -\ln | \csc u + \cot u | +C \end{cases} \end{equation}$
 6. $\int{\tan{u}}du = \ln |sec u | +C$
 7. $\int \cot u du = \ln |\sin u| +C$
 
@@ -151,23 +149,46 @@ $$
 1. $\int \diff \arcsin u = \int \frac{du}{\sqrt{1-u²}}$ 
 
 #  Integration by parts
-> [!Formula(?)]
-> $\int u dv= uv - \int vdu$
+> [!theorem]
+> Let $u=f(x)$ & $v=g(x)$ be functions with continuous derivatives. Then the integration by parts formula for the integral involving these two functions is $$\int udv = uv - \int vdu$$
+
+
 
 E.g.,
-1. $x e^xdx$
-$$\begin{align}
-u = x; du =dx
-v = 
+1. $x^2 e^xdx$
 
-\end{align}$$
+
+
 
 Tip: remember LIATE{
-Logarithmic
+Logarithmic,
 Inverse Trigonometric, 
-Algebraic
-Trigonometric, Exponential}order
+Algebraic,
+Trigonometric,
+Exponential} order;
 
+# Trigonometric Expressions
+
+## Type 1: $\int \sin^m(u) \cos^n (u) dx$
+### Case 1
+Either $m$ or $n$ is odd positive integer
+1. If $m$ is odd, factor out $\sin u$ and change the remaining power of sine to power of cosine by $\sin^2 u = 1- \cos^2 u$
+2. If $n$ is odd, factor out $\cos u$  and change the remaining power of cosine to power of sine by $\cos^2 u =1 -\sin^2u$ 
+### Case 2
+Both $m$ and $n$ are even positive integers or zero:
+
+Use the half-angle formula:
+$$sin^u = \frac{1-cos2u}{2}$$
+$$
+\cos^2u = \frac{1+cos2u}{2}$$
+
+- - -
+Unit circle:
+$30° = \frac{\pi}{6}$
+$45° = \frac{\pi}{4}$
+$60° = \frac{\pi}{3}$
+$90° = \frac{\pi}{2}$
+- - -
 # Fundamental theorem
 
 
@@ -187,28 +208,9 @@ $$\begin{align}
 \int_a^cf(x)dx +\int_c^bf(x)dx
 \end{align}$$
 
-# Trigonometric Integrals
-Commons
-$$
-\text{Evaluating } \int tan^mxsec^nxdx
-$$
-If the power of secant is even ($n=2k,k>=2$)
-E.g.,
-$\int \tan^6x\sec^4xdx$ 
-$= \int\tan^6x(1+tan^2x)sec^2xdx$
 
-$du$ 
-Assignment:
-- - -
-1. $\int_{0}^{\pi} \sin^2x\cos^4xdx$
-2. $\int \frac{1-\tan^2x}{sec^2x}dx$ 
-- - -
-Unit circle:
-$30° = \frac{\pi}{6}$
-$45° = \frac{\pi}{4}$
-$60° = \frac{\pi}{3}$
-$90° = \frac{\pi}{2}$
-- - -
+
+
 
 # Partial Fraction
 
@@ -297,7 +299,7 @@ Let $f$ be continuous, nonnegative function on the interval \[a,b] with $a \geq 
 Example:
 1. $R$ is bounded by lines $y=0$ and $x=3$ is revolved about the y-axis. Find the $V(S)$
 $$\begin{align}
-\text{404 not found} \\
+\text{🫠} \\
 V(S)=2\pi\int_0^3 x(x^2)dx \\
 \text{simplify $x(x^2)$}\\
 = 2\pi \int_0^3 x^3dx\\
